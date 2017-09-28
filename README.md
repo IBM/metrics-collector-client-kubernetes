@@ -9,7 +9,7 @@ This is an Kubernetes Job that can track and report details of a demo/tutorial t
 	git clone https://github.com/IBM/metrics-collector-client-kubernetes.git
 	cd metrics-collector-client-kubernetes
 	```
-2. Fill in the information in the repository.yaml file and save it in this repository. For more details, please go to [Example repository.yaml file](#example-repository.yaml-file)
+2. Fill in the information in the repository.yaml file and save it in this repository. For more details, please go to [Example repository.yaml file](#example-repositoryyaml-file)
 
 3. Use the following commands to install the necessary Python packages and run the Python Job to build your custom Kubernetes job. 
 	```bash
