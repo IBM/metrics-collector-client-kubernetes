@@ -1,0 +1,21 @@
+--- 
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: metric-client
+spec:
+  template:
+    metadata:
+      name: metric-client
+    spec:
+      containers:
+      - name: metric-client
+        image: journeycode/kubernetes:latest
+        imagePullPolicy: Always
+        resources:
+          limits:
+            cpu: 100m
+        env:
+          - name: config
+            value: ''
+      restartPolicy: Never
