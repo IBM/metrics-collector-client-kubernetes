@@ -56,7 +56,7 @@ This data is collected from the Kubernetes Job in the sample application's yaml 
 
 ## Disabling Deployment Tracking
 
-Please common out/remove the Metric Kubernetes Job portion in the Yaml file where you inserted this Kubernetes Job.
+Please comment out/remove the Metric Kubernetes Job portion in the Yaml file where you inserted this Kubernetes Job.
 
 # License
 

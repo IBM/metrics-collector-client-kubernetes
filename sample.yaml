@@ -11,7 +11,6 @@ spec:
       containers:
       - name: metric-client
         image: journeycode/kubernetes:latest
-        imagePullPolicy: Always
         resources:
           limits:
             cpu: 100m

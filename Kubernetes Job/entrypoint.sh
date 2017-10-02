@@ -1,11 +1,16 @@
-machineid=$(/kubectl cluster-info dump | awk ' /MachineID/ {print $2;exit}' | tr -d "\",")
-clusterinfo=$(/kubectl get pods -n kube-system -o yaml | awk ' /armada/ {print $2;exit}')
-nodeinfo=$(/kubectl get nodes | awk ' /minikube/ {print $1;exit}')
+/kubectl get nodes -o yaml > nodeinfo.yaml
+/kubectl get pods -n kube-system -o yaml > kube-system.yaml
+machineid=$(awk ' /machineID/ {print $2;exit}' nodeinfo.yaml | tr -d "\",")
+clusterinfo=$(awk ' /armada/ {print $2;exit}' kube-system.yaml)
+kubeadm=$(awk ' /mirantis/ {print $2;exit}' kube-system.yaml)
+nodeinfo=$(awk ' /minikube/ {print $1;exit}' nodeinfo.yaml)
 DATE=$(date '+%Y-%m-%d %H:%M:%S')
 if [ ${#clusterinfo} -ne 0 ]; then
 	cluster='IBM'
 elif [ ${#nodeinfo} -ne 0 ]; then
 	cluster='Minikube'
+elif [ ${#kubeadm} -ne 0 ]; then
+	cluster='kubeadm'
 else
 	cluster='Others'
 fi
