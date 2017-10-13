@@ -1,6 +1,8 @@
 # Overview
 
-This is a Kubernetes Job that can track and report details of a demo/tutorial that has been deployed to Kubernetes.
+Metrics Collector Service collects statistics for dpelyoment of a github sample code on Cloud Foundry, Kubernetes, Data Science Experience, OpenWhisk etc. 
+
+This Kubernetes Metrics client can send metrics related to workload deployments on Kubernetes. This is a Kubernetes Job that can track and report details of a demo/tutorial that has been deployed to Kubernetes.
 
 # To Use
 
