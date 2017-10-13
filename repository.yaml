@@ -1,7 +1,51 @@
-id: Kubernetes-container-service-GitLab-sample
+id: <your github repository name>
 event_id: web
 event_organizer: dev-journeys
-runtimes: 
+runtimes:
+  # Please list other runtime elements that are used in your journey
   - Kubernetes Cluster
-services: 
-  - Compose for PostgreSQL
+services:
+  # Please list any services that are used in your journey
+  -
+
+# List of Standard Runtime and Service name
+# (For runtimes/services that are not in the list,
+# please use the official name in the Bluemix Catalog)
+
+# runtimes:
+#       - Kubernetes Cluster
+#       - OpenWhisk
+#       - Cloud Foundry
+#       - Mainframe
+#       - Swift on the Server
+#       - Hyperledger Composer
+
+# services:
+#       - IoT Platform
+#       - Investment Portfolio
+#       - NodeRed
+#       - Speech to Text
+#       - Watson IoT Platform
+#       - Object Storage
+#       - Apache Spark
+#       - Cloudant NoSQL DB
+#       - Tone Analyzer
+#       - Natural Language Understanding
+#       - Visual Recognition
+#       - Conversation
+#       - Discovery
+#       - Text-to-Speech
+#       - Speech-to-Text
+#       - API Connect
+#       - Secure Gateway
+#       - Watson Analytics
+#       - Insights for Weather
+#       - Internet of Things Platform
+#       - Compose for MySQL
+#       - Compose for PostgreSQL
+#       - App ID
+#       - IBM Push
+#       - Streaming Analytics for Bluemix
+#       - Investment Portfolio
+#       - Predictive Market Scenarios
+#       - Simulated Instrument Analytics

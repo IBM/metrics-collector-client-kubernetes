@@ -1,4 +1,4 @@
---- 
+---
 apiVersion: batch/v1
 kind: Job
 metadata:
@@ -8,13 +8,13 @@ spec:
     metadata:
       name: metric-client
     spec:
-      containers:
-      - name: metric-client
-        image: journeycode/kubernetes:latest
-        resources:
-          limits:
-            cpu: 100m
-        env:
-          - name: config
-            value: ''
       restartPolicy: Never
+      containers:
+        - name: metric-client
+          image: journeycode/kubernetes:latest
+          resources:
+            limits:
+              cpu: 100m
+          env:
+            - name: config
+              value: ''

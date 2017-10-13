@@ -1,6 +1,11 @@
 import json
 import yaml
 
+class MyDumper(yaml.Dumper):
+	# Reference from Pyyaml ticket 64
+    def increase_indent(self, flow=False, indentless=False):
+        return super(MyDumper, self).increase_indent(flow, False)
+
 def getJson():
 	try:
 		f = open("repository.yaml", "r")
@@ -43,7 +48,7 @@ def createJob(sample,data):
 			sample['spec']['template']['metadata']['name'] = metric_name
 			sample['metadata']['name'] = metric_name
 		f = open("metricjob.yaml", "w")
-		f.write(''.join(['---\n',yaml.dump(sample)]))
+		f.write(''.join(['---\n',yaml.dump(sample, Dumper=MyDumper, width=50)]))
 		f.close()
 	except:
 		print("Wrong contents in sample.yaml")
