@@ -6,7 +6,7 @@ runtimes:
   - Kubernetes Cluster
 services:
   # Please list any services that are used in your journey
-  - Compose for MySQL
+  - 
   # Please put down the main language(only one) that is used in your journey in lower case. 
   # If you don't have one, just leave it blank
 language: 
