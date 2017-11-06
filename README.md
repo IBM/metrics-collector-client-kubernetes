@@ -45,17 +45,23 @@ Required field:
 1. id: Put your journey name/Github URL of your journey.
 	- note: Please put down the whole Github URL if your journey/pattern is not in IBM organization.
 2. runtimes: Put down all your platform runtime environments in a list.
-3. services: Put down all the bluemix services that are used in your journey in a list.
+3. services: Put down all the IBM Cloud services that are used in your journey in a list.
 4. event_id: Put down where you will distribute your journey. The default value is **web**. 
 5. event_organizer: Put down your event organizer if you have one.
 6. language: Please put down the journey's main language in lower case if you have one.
+
+# Example app
+
+To see how to include this into your app please visit [Java Spring Boot microservices on Kubernetes](https://github.com/IBM/spring-boot-microservices-on-kubernetes).  You will want to pay attention to one of its main [yaml files with the client job](https://github.com/IBM/spring-boot-microservices-on-kubernetes/blob/master/account-summary.yaml#L62).
 
 # Privacy Notice
 
 Sample Kubernetes Yaml file that includes this package may be configured to track deployments to [IBM Cloud](https://www.bluemix.net/) and other Kubernetes platforms. The following information is sent to a [Deployment Tracker](https://github.com/IBM/metrics-collector-service) service on each deployment:
 
 * Kubernetes Cluster Provider(`IBM Cloud,Minikube,etc`)
-* Kubernetes Machine ID (`MachineID`)
+* Kubernetes Machine ID
+* Kubernetes Cluster ID (Only from IBM Cloud's cluster)
+* Kubernetes Customer ID (Only from IBM Cloud's cluster)
 * Environment variables in this Kubernetes Job.
 
 This data is collected from the Kubernetes Job in the sample application's yaml file. This data is used by IBM to track metrics around deployments of sample applications to IBM Cloud to measure the usefulness of our examples so that we can continuously improve the content we offer to you. Only deployments of sample applications that include code to ping the Deployment Tracker service will be tracked.
