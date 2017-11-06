@@ -30,31 +30,35 @@ This Kubernetes Metrics client can send metrics related to workload deployments 
 The repository.yaml need to be written in YAML format. Also, please put all your keys in lower case.
 
 ```
-id: Kubernetes-container-service-GitLab-sample
+id: spring-boot-microservices-on-kubernetes
 event_id: web
 event_organizer: dev-journeys
 runtimes: 
   - Kubernetes Cluster
+  - OpenWhisk
 services: 
-  - Compose for PostgreSQL
+  - Compose for MySQL
+language: java
 ```
 
 Required field:
 1. id: Put your journey name/Github URL of your journey.
+	- note: Please put down the whole Github URL if your journey/pattern is not in IBM organization.
 2. runtimes: Put down all your platform runtime environments in a list.
 3. services: Put down all the bluemix services that are used in your journey in a list.
 4. event_id: Put down where you will distribute your journey. The default value is **web**. 
 5. event_organizer: Put down your event organizer if you have one.
+6. language: Please put down the journey's main language in lower case if you have one.
 
 # Privacy Notice
 
-Sample Kubernetes Yaml file that includes this package may be configured to track deployments to [IBM Bluemix](https://www.bluemix.net/) and other Kubernetes platforms. The following information is sent to a [Deployment Tracker](https://github.com/IBM/metrics-collector-service) service on each deployment:
+Sample Kubernetes Yaml file that includes this package may be configured to track deployments to [IBM Cloud](https://www.bluemix.net/) and other Kubernetes platforms. The following information is sent to a [Deployment Tracker](https://github.com/IBM/metrics-collector-service) service on each deployment:
 
-* Kubernetes Cluster Provider(`Bluemix,Minikube,etc`)
+* Kubernetes Cluster Provider(`IBM Cloud,Minikube,etc`)
 * Kubernetes Machine ID (`MachineID`)
 * Environment variables in this Kubernetes Job.
 
-This data is collected from the Kubernetes Job in the sample application's yaml file. This data is used by IBM to track metrics around deployments of sample applications to IBM Bluemix to measure the usefulness of our examples so that we can continuously improve the content we offer to you. Only deployments of sample applications that include code to ping the Deployment Tracker service will be tracked.
+This data is collected from the Kubernetes Job in the sample application's yaml file. This data is used by IBM to track metrics around deployments of sample applications to IBM Cloud to measure the usefulness of our examples so that we can continuously improve the content we offer to you. Only deployments of sample applications that include code to ping the Deployment Tracker service will be tracked.
 
 ## Disabling Deployment Tracking
 

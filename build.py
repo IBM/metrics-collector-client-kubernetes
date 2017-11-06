@@ -1,6 +1,9 @@
 import json
 import yaml
 
+#global variables
+language = ''
+
 class MyDumper(yaml.Dumper):
 	# Reference from Pyyaml ticket 64
     def increase_indent(self, flow=False, indentless=False):
@@ -25,6 +28,8 @@ def formatData(data):
 		newData['target_services'] = data['services'] if data.get("services") else ''
 		newData['event_id'] = data['event_id'] if data.get("event_id") else ''
 		newData['event_organizer'] = data['event_organizer'] if data.get("event_organizer") else ''
+		global language
+		language = data['language'] if data.get("language") else ''
 		return newData
 	except:
 		print("Wrong contents in repository.yaml")
@@ -42,6 +47,7 @@ def getSampleJob():
 def createJob(sample,data):
 	try:
 		sample['spec']['template']['spec']['containers'][0]['env'][0]['value'] = json.dumps(data)
+		sample['spec']['template']['spec']['containers'][0]['env'][1]['value'] = json.dumps(language).replace('"','')
 		if data.get("repository_id"):
 			metric_name = '-'.join([json.dumps(data['repository_id']).replace('"', '').lower(),'metrics'])
 			sample['spec']['template']['spec']['containers'][0]['name'] = metric_name
