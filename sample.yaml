@@ -18,3 +18,5 @@ spec:
           env:
             - name: config
               value: ''
+            - name: language
+              value: ''
