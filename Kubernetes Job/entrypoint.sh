@@ -3,6 +3,9 @@
 /kubectl get cm -n kube-system cluster-info -o yaml > clusterinfo.yaml
 clusterid=$(awk ' /cluster_id/ {print $2;exit}' clusterinfo.yaml | tr -d "\",")
 customerid=$(awk ' /customer_id/ {print $2;exit}' clusterinfo.yaml | tr -d "\",")
+if [ ${#customerid} -eq 0 ]; then
+  customerid=$(awk ' /account_id/ {print $2;exit}' clusterinfo.yaml | tr -d "\",")
+fi
 machineid=$(awk ' /machineID/ {print $2;exit}' nodeinfo.yaml | tr -d "\",")
 clusterinfo=$(awk ' /armada/ {print $2;exit}' kube-system.yaml)
 kubeadm=$(awk ' /mirantis/ {print $2;exit}' kube-system.yaml)
